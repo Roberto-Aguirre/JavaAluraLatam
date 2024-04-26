@@ -1,3 +1,5 @@
+package Proyecto;
+
 import java.text.MessageFormat;
 import java.util.Scanner;
 
@@ -57,7 +59,7 @@ public static void main (String[]args){
                     saldo_opcion = teclado.nextDouble();
                     if(saldo_opcion<saldo){
                         saldo -= saldo_opcion;    
-                        var OPCION2_OK = MessageFormat.format("Saldo restante {0}",saldo);
+                        var OPCION2_OK = MessageFormat.format("Saldo restante {0} $",saldo);
                         System.out.println(OPCION2_OK);}
                         else{System.out.println(OPCION2_ERROR);}
 
