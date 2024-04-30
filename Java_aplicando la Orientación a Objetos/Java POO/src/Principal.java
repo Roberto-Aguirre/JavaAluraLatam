@@ -1,3 +1,4 @@
+import com.aluracursos.screenmatch.calculos.CalculadoraDeTiempo;
 import com.aluracursos.screenmatch.modelos.Pelicula;
 import com.aluracursos.screenmatch.modelos.Serie;
 
@@ -24,17 +25,27 @@ System.out.println("Média de evaluaciones de la película: " + miPelicula.calcu
         serie1.setNombre("Juego de Tronos");
         serie1.setFechaDeLanzamiento(2000);
         serie1.setIncluidoEnElPlan(true);
-        serie1.setTemporadas(10);
+        serie1.setTemporadas(1);
         serie1.setMinutosPorTemporada(50);
         serie1.setCapitulosPorTemporada(10);
         serie1.muestraFichaTecnica();
-// Pelicula otraPelicula = new Pelicula();
 
-    // otraPelicula.nombre = "Matrix";
-    // otraPelicula.fechaDeLanzamiento = 1998;
-    // otraPelicula.duracionEnMinutos = 180;
+        CalculadoraDeTiempo calculadora = new CalculadoraDeTiempo();
+        calculadora.incluye(miPelicula);
+        System.out.println(calculadora.getTiempoTotal());
+        calculadora.incluye(serie1);
+        System.out.println(calculadora.getTiempoTotal());
+        
+        Pelicula otraPelicula = new Pelicula();
+        otraPelicula.setNombre("Matrix");;
+        otraPelicula.setFechaDeLanzamiento(1998);
+        otraPelicula.setDuracionEnMinutos(180);
+        calculadora.incluye(otraPelicula);
+        System.out.println("Tiempo necesario para ver tus titulos favoritos: "+calculadora.getTiempoTotal()+" minutos");
+        
+        
 
-    // otraPelicula.muestraFichaTecnica();
+
 
     }
 
