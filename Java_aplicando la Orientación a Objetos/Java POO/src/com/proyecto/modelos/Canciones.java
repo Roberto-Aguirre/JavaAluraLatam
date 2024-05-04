@@ -1,6 +1,7 @@
 package com.proyecto.modelos;
 
 public class Canciones extends Audio{
+    
     private String autor;
     private String genero;
     private String album;

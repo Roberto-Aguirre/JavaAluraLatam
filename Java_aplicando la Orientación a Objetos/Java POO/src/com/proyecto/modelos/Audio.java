@@ -8,7 +8,6 @@ public class Audio {
     private int clasificacion;
     private int annoLanzamiento;
 
-
     public int getAnnoLanzamiento() {
         return annoLanzamiento;
     }
@@ -45,9 +44,6 @@ public class Audio {
         this.duracion = duracion;        
     }
     
-    public void setTotalDeReproducciones(int totalDeReproducciones){
-        this.totalDeReproducciones = totalDeReproducciones;
-    }
 
     public void setMeGustas(int meGustas){
         this.meGustas = meGustas;
@@ -61,8 +57,8 @@ public class Audio {
         meGustas++;
     }
     
-    public void Reproducir(){
-        System.out.println("Musica");
+    public void Reproducciones(){
+        totalDeReproducciones++;
     }
 
 }
