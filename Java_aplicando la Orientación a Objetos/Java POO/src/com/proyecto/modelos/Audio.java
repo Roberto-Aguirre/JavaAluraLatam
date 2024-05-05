@@ -54,11 +54,11 @@ public class Audio {
     }
 
     public void DarMeGusta(){
-        meGustas++;
+        this.meGustas++;
     }
     
     public void Reproducciones(){
-        totalDeReproducciones++;
+        this.totalDeReproducciones++;
     }
 
 }
