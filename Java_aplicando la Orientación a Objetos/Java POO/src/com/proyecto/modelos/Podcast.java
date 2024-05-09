@@ -1,8 +1,17 @@
 package com.proyecto.modelos;
 
-public class Podcast {
+public class Podcast extends Audio{
     String canal;
     String descripcion;
+
+    @Override
+    public int getClasificacion() {
+        if(getTotalDeReproducciones()>= 100)
+        return 9;
+        else
+        return 2;
+    }
+
 
     public String getCanal() {
         return canal;

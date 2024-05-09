@@ -28,7 +28,7 @@ public class Audio {
         return totalDeReproducciones;
     }
 
-    public int getMeGustas(){
+    public int getTotalMeGustas(){
         return meGustas;
     }
 
@@ -36,7 +36,7 @@ public class Audio {
         return clasificacion;
     }
 
-    public void setTitutlo(String titulo){
+    public void setTitulo(String titulo){
         this.titulo = titulo;
     }
 
@@ -45,9 +45,9 @@ public class Audio {
     }
     
 
-    public void setMeGustas(int meGustas){
-        this.meGustas = meGustas;
-    }
+    // public void setMeGustas(int meGustas){
+    //     this.meGustas = meGustas;
+    // }
 
     public void setClasificacion(int clasificacion){
         this.clasificacion = clasificacion;
