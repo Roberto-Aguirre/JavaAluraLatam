@@ -1,8 +1,8 @@
-package com.proyecto.principal;
+package com.aluracursos.proyecto.modelos.principal;
 
-import com.proyecto.modelos.Canciones;
-import com.proyecto.modelos.MisFavoritos;
-import com.proyecto.modelos.Podcast;
+import com.aluracursos.proyecto.modelos.Canciones;
+import com.aluracursos.proyecto.modelos.MisFavoritos;
+import com.aluracursos.proyecto.modelos.Podcast;
 
 public class Principal {
     public static void main(String[] args) {

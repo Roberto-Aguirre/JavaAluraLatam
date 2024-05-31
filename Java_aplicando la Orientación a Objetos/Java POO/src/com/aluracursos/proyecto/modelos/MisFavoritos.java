@@ -1,4 +1,4 @@
-package com.proyecto.modelos;
+package com.aluracursos.proyecto.modelos;
 
 public class MisFavoritos {
 

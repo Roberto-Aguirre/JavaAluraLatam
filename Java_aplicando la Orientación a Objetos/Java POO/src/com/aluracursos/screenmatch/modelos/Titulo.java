@@ -61,8 +61,8 @@ public class Titulo {
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return "Pelicula " + this.getNombre()+ " ("+this.fechaDeLanzamiento+")";
+        
+        return this.getNombre()+ " ("+this.fechaDeLanzamiento+")";
     }
     
 }

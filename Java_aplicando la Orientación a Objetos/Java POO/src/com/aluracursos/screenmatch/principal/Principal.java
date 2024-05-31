@@ -1,4 +1,4 @@
-package com.aluracursos.screenmatch;
+package com.aluracursos.screenmatch.principal;
 
 import java.util.ArrayList;
 
