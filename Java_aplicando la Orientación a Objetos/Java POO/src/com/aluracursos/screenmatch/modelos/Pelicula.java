@@ -4,6 +4,9 @@ import com.aluracursos.screenmatch.calculos.Clasificacion;
 
 public class Pelicula extends Titulo implements Clasificacion{  
 
+    public Pelicula(String nombre, int fechaDeLanzamiento) {
+        super(nombre, fechaDeLanzamiento);
+    }
     private String director;
 
     public String getDirector(){

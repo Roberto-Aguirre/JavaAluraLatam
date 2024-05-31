@@ -1,4 +1,7 @@
 package com.aluracursos.screenmatch;
+
+import java.util.ArrayList;
+
 import com.aluracursos.screenmatch.calculos.CalculadoraDeTiempo;
 import com.aluracursos.screenmatch.calculos.FiltroRecomendacion;
 import com.aluracursos.screenmatch.modelos.Episodio;
@@ -9,22 +12,19 @@ public class Principal {
 
     public static void main(String[] args) {
 
-    Pelicula miPelicula = new Pelicula();
-    
-    miPelicula.setNombre("Encanto");
-    miPelicula.setFechaDeLanzamiento(2023);
-    miPelicula.setDuracionEnMinutos(120);;
-    miPelicula.setIncluidoEnElPlan(true);;
+        Pelicula miPelicula = new Pelicula("Encanto",2003);
 
-    miPelicula.muestraFichaTecnica();
-    miPelicula.evaluar(10.0);
+        miPelicula.setDuracionEnMinutos(120);
+        ;
+        miPelicula.setIncluidoEnElPlan(true);
+        ;
 
-System.out.println("Média de evaluaciones de la película: " + miPelicula.calculaMedia());
+        miPelicula.muestraFichaTecnica();
+        miPelicula.evaluar(10.0);
 
-        Serie serie1 = new Serie();
+        System.out.println("Média de evaluaciones de la película: " + miPelicula.calculaMedia());
 
-        serie1.setNombre("Juego de Tronos");
-        serie1.setFechaDeLanzamiento(2000);
+        Serie serie1 = new Serie("Juego de Tronos",2000);
         serie1.setIncluidoEnElPlan(true);
         serie1.setTemporadas(1);
         serie1.setMinutosPorTemporada(50);
@@ -36,13 +36,12 @@ System.out.println("Média de evaluaciones de la película: " + miPelicula.calcu
         System.out.println(calculadora.getTiempoTotal());
         calculadora.incluye(serie1);
         System.out.println(calculadora.getTiempoTotal());
-        
-        Pelicula otraPelicula = new Pelicula();
-        otraPelicula.setNombre("Matrix");;
-        otraPelicula.setFechaDeLanzamiento(1998);
+
+        Pelicula otraPelicula = new Pelicula("Matrix",1998);
         otraPelicula.setDuracionEnMinutos(180);
         calculadora.incluye(otraPelicula);
-        System.out.println("Tiempo necesario para ver tus titulos favoritos: "+calculadora.getTiempoTotal()+" minutos");
+        System.out.println(
+                "Tiempo necesario para ver tus titulos favoritos: " + calculadora.getTiempoTotal() + " minutos");
 
         FiltroRecomendacion recomendacion = new FiltroRecomendacion();
         recomendacion.filtro(miPelicula);
@@ -53,6 +52,17 @@ System.out.println("Média de evaluaciones de la película: " + miPelicula.calcu
         episodio.setNombre("La casa Dragon");
 
         recomendacion.filtro(episodio);
+
+        ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();
+        listaDePeliculas.add(miPelicula);
+        listaDePeliculas.add(otraPelicula);
+
+        System.out.println("Tamaño de la lista " + listaDePeliculas.size());
+        System.out.println("La primera pelicual es " + listaDePeliculas.get(0).getNombre());
+        System.out.println("La primera pelicual es " + listaDePeliculas);
+        //! Generar un array en el cual sean 5 maximo de extension.
+        //* int[] numeros = new int[5];
+
     }
 
 }

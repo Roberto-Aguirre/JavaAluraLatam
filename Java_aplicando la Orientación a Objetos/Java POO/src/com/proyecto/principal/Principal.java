@@ -32,5 +32,10 @@ public class Principal {
         MisFavoritos favoritos = new MisFavoritos();
         favoritos.adicionar(miPodcast);
         favoritos.adicionar(miCancion);
+
+
+    
+
+
     }
 }
