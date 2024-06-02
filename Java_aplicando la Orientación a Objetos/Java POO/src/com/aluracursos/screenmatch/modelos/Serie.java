@@ -39,7 +39,6 @@ public class Serie extends Titulo {
         this.minutosPorEpisodio = minutosPorEpisodio;
     }
 
-    
 
 
 }
