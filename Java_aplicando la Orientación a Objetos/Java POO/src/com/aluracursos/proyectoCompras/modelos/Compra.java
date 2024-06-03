@@ -1,15 +1,15 @@
 package com.aluracursos.proyectoCompras.modelos;
 
 public class Compra {
-    private int valorCompra;
+    private double valorCompra;
     private String descripcionCompra;
 
-    public Compra(int valorCompra, String descripcionCompra) {
+    public Compra(double valorCompra, String descripcionCompra) {
         this.valorCompra = valorCompra;
         this.descripcionCompra = descripcionCompra;
     }
 
-    public int getValorCompra() {
+    public double getValorCompra() {
         return valorCompra;
     }
 

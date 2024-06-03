@@ -22,14 +22,14 @@ public class PrincipalCompras {
         Scanner input = new Scanner(System.in);
 
         System.out.println(textoLimite);
-        Tarjeta tdc = new Tarjeta(input.nextInt());
+        Tarjeta tdc = new Tarjeta(input.nextDouble());
         while (opcion != 0) {
             if (opcion == 1) {
                 
                 System.out.println("\n"+textoDescripcion);
                 String valorDescripcion = input.next();
                 System.out.println(textoValor);
-                int valorCompra = input.nextInt();
+                double valorCompra = input.nextDouble();
                 Compra compra = new Compra(valorCompra, valorDescripcion);
                 if (tdc.getSaldo() >= compra.getValorCompra()) {
                     tdc.realizarCompra(compra);
