@@ -1,12 +1,10 @@
 package com.aluracursos.proyectoCompras.principal;
 
-import java.util.Collection;
 import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
-import com.aluracursos.screenmatch.modelos.Titulo;
+import com.aluracursos.proyectoCompras.modelos.Compra;
+import com.aluracursos.proyectoCompras.modelos.Tarjeta;
 
 public class PrincipalCompras {
     public static void main(String[] args) {
@@ -20,29 +18,25 @@ public class PrincipalCompras {
         String textoOpcionError = "Digite un valor correcto";
         /**Seccion variables del sistema */
         int opcion = 1;
-        int valorLimite, valorCompra;
-        String valorDescripcion;
         
-        Map<String, Integer> listaCompras = new HashMap<>();
         Scanner input = new Scanner(System.in);
 
         System.out.println(textoLimite);
-        valorLimite = input.nextInt();
+        Tarjeta tdc = new Tarjeta(input.nextInt());
         while (opcion != 0) {
             if (opcion == 1) {
                 
                 System.out.println("\n"+textoDescripcion);
-                valorDescripcion = input.next();
+                String valorDescripcion = input.next();
                 System.out.println(textoValor);
-                valorCompra = input.nextInt();
-                if (valorCompra < valorLimite) {
-                    System.out.println(valorLimite);
-                    listaCompras.put(valorDescripcion,valorCompra);
-                    valorLimite -= valorCompra;
-                    // System.out.println(valorLimite);
+                int valorCompra = input.nextInt();
+                Compra compra = new Compra(valorCompra, valorDescripcion);
+                if (tdc.getSaldo() >= compra.getValorCompra()) {
+                    tdc.realizarCompra(compra);
                     System.out.println(textoCompraRealizada);
                     System.out.println(textoOpcion);
                     opcion = input.nextInt();
+
                 }
                 else {
                     System.out.println(textoCompraError);
@@ -55,12 +49,13 @@ public class PrincipalCompras {
             }
         }
         
+        tdc.listaDeCompras.sort(Comparator.comparing(Compra::getValorCompra));
         System.out.println("\n*************************");
         System.out.println("COMPRAS REALIZADAS");
-        listaCompras.forEach((t, u) -> System.out.println(t +" "+ u) );
+        tdc.listaDeCompras.forEach((element)->System.out.println(element.toString()));
 
         System.out.println("*************************");
-        System.out.println("Saldo de la tarjeta: "+ valorLimite);
+        System.out.println("Saldo de la tarjeta: "+ tdc.getSaldo());
 
 
     }
