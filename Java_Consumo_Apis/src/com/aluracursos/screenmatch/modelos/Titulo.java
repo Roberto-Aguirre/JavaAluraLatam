@@ -1,8 +1,11 @@
 package com.aluracursos.screenmatch.modelos;
 
-public class Titulo implements Comparable<Titulo>{
-  
+import com.google.gson.annotations.SerializedName;
+
+public class Titulo implements Comparable<Titulo> {
+    @SerializedName("Title")
     private String nombre;
+    @SerializedName("Year")
     private int fechaDeLanzamiento;
     private int duracionEnMinutos;
     private boolean incluidoEnElPlan;
@@ -10,59 +13,73 @@ public class Titulo implements Comparable<Titulo>{
     private double sumaDeLasEvaluaciones;
     private int totalDeLasEvaluaciones;
 
-
     public Titulo(String nombre, int fechaDeLanzamiento) {
         this.nombre = nombre;
         this.fechaDeLanzamiento = fechaDeLanzamiento;
     }
 
-    public void setNombre(String nombre){
+    public Titulo(TituloOmdb miTituloOmbd) {
+        this.nombre = miTituloOmbd.title();
+        this.fechaDeLanzamiento = Integer.valueOf(miTituloOmbd.year());
+        this.duracionEnMinutos = Integer.valueOf(miTituloOmbd.Runtime().substring(0, 2));
+    }
+
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public String getNombre(){
+
+    public String getNombre() {
         return nombre;
     }
-    public void setFechaDeLanzamiento(int fechaDeLanzamiento){
+
+    public void setFechaDeLanzamiento(int fechaDeLanzamiento) {
         this.fechaDeLanzamiento = fechaDeLanzamiento;
     }
-    public int getFechaDeLanzamiento(){
+
+    public int getFechaDeLanzamiento() {
         return fechaDeLanzamiento;
     }
-    public void setDuracionEnMinutos(int duracionEnMinutos){
+
+    public void setDuracionEnMinutos(int duracionEnMinutos) {
         this.duracionEnMinutos = duracionEnMinutos;
     }
-    public int getDuracionEnMinutos(){
+
+    public int getDuracionEnMinutos() {
         return duracionEnMinutos;
     }
-    public void setIncluidoEnElPlan(boolean incluidoEnElPlan){
+
+    public void setIncluidoEnElPlan(boolean incluidoEnElPlan) {
         this.incluidoEnElPlan = incluidoEnElPlan;
     }
 
-    public boolean getIncluidoEnElPlan(){
+    public boolean getIncluidoEnElPlan() {
         return incluidoEnElPlan;
     }
 
-    public int getTotalDeLasEvaluaciones(){
+    public int getTotalDeLasEvaluaciones() {
         return totalDeLasEvaluaciones;
     }
-    public void muestraFichaTecnica(){
+
+    public void muestraFichaTecnica() {
         System.out.println("El nombre de la pelicula es : " + getNombre());
-        System.out.println("Su fecha de lanzamiento es : "+ getFechaDeLanzamiento());
+        System.out.println("Su fecha de lanzamiento es : " + getFechaDeLanzamiento());
         System.out.println("Duracion en minutos : " + getDuracionEnMinutos());
     }
-    public void evaluar(double nota){
-            sumaDeLasEvaluaciones += nota;
-            totalDeLasEvaluaciones++;
-    }
-    public double calculaMedia(){
 
-        return sumaDeLasEvaluaciones/totalDeLasEvaluaciones;  
+    public void evaluar(double nota) {
+        sumaDeLasEvaluaciones += nota;
+        totalDeLasEvaluaciones++;
+    }
+
+    public double calculaMedia() {
+
+        return sumaDeLasEvaluaciones / totalDeLasEvaluaciones;
     }
 
     @Override
     public String toString() {
-        
-        return this.getNombre()+ " ("+this.fechaDeLanzamiento+")";
+
+        return this.getNombre() + " (" + this.fechaDeLanzamiento + ")"+ " Duracion: "+this.duracionEnMinutos ;
     }
 
     @Override
