@@ -23,8 +23,9 @@ public class PrincipalConBusqueda {
         var peliculaUsuario = input.nextLine();
     
         String apikey = "57bedfc9";
-        String peliculaPeticion = "http://www.omdbapi.com/?t="+peliculaUsuario+"&apikey="+apikey;
+        String peliculaPeticion = "http://www.omdbapi.com/?t="+peliculaUsuario.replace(" ", "+")+"&apikey="+apikey;
     
+        try {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(peliculaPeticion))
@@ -36,14 +37,28 @@ public class PrincipalConBusqueda {
         
          Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
          TituloOmdb miTituloOmbd = gson.fromJson(json,TituloOmdb.class);
-         try {
-            Titulo miTitulo = new Titulo(miTituloOmbd);
+         Titulo miTitulo = new Titulo(miTituloOmbd);
             System.out.println("Titulo: "+ miTitulo.toString());
          } catch (NumberFormatException e) {
             System.out.println("Ocurrio un error: " + e.getMessage());
-         }finally{
+         }catch (IllegalArgumentException e){
+            System.out.println("Error en entrada de URI, verificar direccion");
+         }catch(Exception e){
+            System.out.println("Ocurrio un error inesperado");
+         }
+         finally{
             System.out.println("Finalizo la ejecucion del programa");
          }
          
     }
 }
+
+/* Metodo para varias excepciones y dar una misma salida.
+ try {
+    metodoQuePuedeLanzarUnaExcepcion();
+} catch (NullPointerException | IllegalArgumentException e) {
+    System.out.println("tratando error...");
+}
+
+ * 
+ */
