@@ -1,0 +1,42 @@
+[
+    {
+        "Title": "Matrix",
+        "Year": 1993,
+        "DuracionEnMinutos": 60,
+        "IncluidoEnElPlan": false,
+        "SumaDeLasEvaluaciones": 0.0,
+        "TotalDeLasEvaluaciones": 0
+    },
+    {
+        "Title": "Earth",
+        "Year": 2007,
+        "DuracionEnMinutos": 90,
+        "IncluidoEnElPlan": false,
+        "SumaDeLasEvaluaciones": 0.0,
+        "TotalDeLasEvaluaciones": 0
+    },
+    {
+        "Title": "Encanto",
+        "Year": 2021,
+        "DuracionEnMinutos": 10,
+        "IncluidoEnElPlan": false,
+        "SumaDeLasEvaluaciones": 0.0,
+        "TotalDeLasEvaluaciones": 0
+    },
+    {
+        "Title": "Godzilla",
+        "Year": 2014,
+        "DuracionEnMinutos": 12,
+        "IncluidoEnElPlan": false,
+        "SumaDeLasEvaluaciones": 0.0,
+        "TotalDeLasEvaluaciones": 0
+    },
+    {
+        "Title": "Vivre sa vie",
+        "Year": 1962,
+        "DuracionEnMinutos": 85,
+        "IncluidoEnElPlan": false,
+        "SumaDeLasEvaluaciones": 0.0,
+        "TotalDeLasEvaluaciones": 0
+    }
+]
