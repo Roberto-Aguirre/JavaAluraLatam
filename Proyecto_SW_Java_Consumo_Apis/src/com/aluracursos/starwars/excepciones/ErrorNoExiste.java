@@ -9,6 +9,6 @@ public class ErrorNoExiste extends RuntimeException{
 
     @Override
     public String getMessage() {
-        return this.mensaje;
+        return this.mensaje+"\n";
     }
 }

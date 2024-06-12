@@ -30,7 +30,7 @@ public class Pelicula {
 
     @Override
     public String toString() {
-        return "Episodio: " + noEpisodio + " | " + titulo + " (" + fechaEstreno + ")";
+        return "Episodio: " + noEpisodio + " | " + titulo + " (" + fechaEstreno + ")\n";
     }
 
 }

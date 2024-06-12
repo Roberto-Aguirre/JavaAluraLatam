@@ -1,38 +1,6 @@
-[
-  {
-    "titulo": "A New Hope",
-    "director": "George Lucas",
-    "fechaEstreno": "1977-05-25",
-    "noEpisodio": 4
-  },
-  {
-    "titulo": "The Empire Strikes Back",
-    "director": "Irvin Kershner",
-    "fechaEstreno": "1980-05-17",
-    "noEpisodio": 5
-  },
-  {
-    "titulo": "Return of the Jedi",
-    "director": "Richard Marquand",
-    "fechaEstreno": "1983-05-25",
-    "noEpisodio": 6
-  },
-  {
-    "titulo": "The Phantom Menace",
-    "director": "George Lucas",
-    "fechaEstreno": "1999-05-19",
-    "noEpisodio": 1
-  },
-  {
-    "titulo": "Attack of the Clones",
-    "director": "George Lucas",
-    "fechaEstreno": "2002-05-16",
-    "noEpisodio": 2
-  },
-  {
-    "titulo": "Revenge of the Sith",
-    "director": "George Lucas",
-    "fechaEstreno": "2005-05-19",
-    "noEpisodio": 3
-  }
-]
+{
+  "titulo": "Return of the Jedi",
+  "director": "Richard Marquand",
+  "fechaEstreno": "1983-05-25",
+  "noEpisodio": 6
+}
