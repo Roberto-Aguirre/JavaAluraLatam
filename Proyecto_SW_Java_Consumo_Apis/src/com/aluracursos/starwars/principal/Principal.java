@@ -1,5 +1,7 @@
 package com.aluracursos.starwars.principal;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -9,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.aluracursos.starwars.excepciones.ErrorNoExiste;
 import com.aluracursos.starwars.modelos.Pelicula;
 import com.aluracursos.starwars.modelos.PeliculaSWAPI;
 import com.google.gson.Gson;
@@ -17,7 +18,7 @@ import com.google.gson.GsonBuilder;
 
 public class Principal {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner inputTeclado = new Scanner(System.in);
         List<Pelicula> listaPeliculas = new ArrayList<>();
         
@@ -25,7 +26,6 @@ public class Principal {
         
     
         System.out.println("""
-        
         
         Ingrese un valor entero del capitulo de Star Wars a buscar.
         Nota: Se encuentran por ordenadas por fecha de salida.
@@ -56,7 +56,10 @@ public class Principal {
         }
 
     }
-
+    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    FileWriter filewriter = new FileWriter("StarWars.json");
+    filewriter.write(gson.toJson(listaPeliculas));
+    filewriter.close();
     System.out.println(listaPeliculas);
     }
 
